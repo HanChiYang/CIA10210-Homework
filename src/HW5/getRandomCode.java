@@ -12,7 +12,7 @@ public class getRandomCode {
 		
 		//跑8次迴圈，每次隨機取得
 		for (int i = 0; i <= 8; i++) {
-			int ranIdx = (int) (Math.random() * 62);
+			int ranIdx = (int) (Math.random() * allChar.length());
 			System.out.print(charArray[ranIdx]);
 		}
 	}
