@@ -15,7 +15,7 @@ public class DogCatFromObject {
 		FileInputStream fis = new FileInputStream(file);
 		ObjectInputStream ois = new ObjectInputStream(fis);
 
-		//建立父類別Animal，並以其類別將物件反序列化，並呼叫speak()
+		//建立父類別Animal，並以其類別將物件反序列化，並呼叫speak方法
 		try {
 			while (true) {
 				((Animal) ois.readObject()).speak();

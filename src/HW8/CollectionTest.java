@@ -10,6 +10,7 @@ import java.util.Iterator;
 
 public class CollectionTest {
 	public static void main(String[] args) {
+		//由於有重複元素，選擇ArrayList集合
 		ArrayList list = new ArrayList();
 		list.add(new Integer(100));
 		list.add(new Double(3.14));

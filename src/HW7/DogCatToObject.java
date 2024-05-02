@@ -9,9 +9,11 @@ import java.io.ObjectOutputStream;
 
 public class DogCatToObject {
 	public static void main(String[] args) throws Exception{
-		//建立data資料夾。
+		//檢查是否有data資料夾，若沒有則建立之。
 		File dir = new File("C:\\data");
-		dir.mkdir();
+		if (!dir.exists()) {
+			dir.mkdir();
+		}
 		//指定輸出Object.ser的輸出路徑，
 		File file = new File("C:\\data\\Object.ser");
 		
@@ -26,8 +28,12 @@ public class DogCatToObject {
 		//輸出狗及貓的資料
 		FileOutputStream fos = new FileOutputStream(file);
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
+		//輸出狗物件迴圈
 		for (int i = 0; i < dogs.length; i++) {
 			oos.writeObject(dogs[i]);
+		}
+		//輸出貓物件迴圈
+		for (int i = 0; i < cats.length; i++) {
 			oos.writeObject(cats[i]);
 		}
 		//關閉資源

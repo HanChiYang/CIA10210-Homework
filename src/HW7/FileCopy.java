@@ -9,8 +9,8 @@ import java.io.IOException;
 public class FileCopy {
 	public static void main(String[] args) {
 		//以上題的題目為例
-		String file1 = "c:\\Random10Number.txt";
-		String file2 = "c:\\Random10Number1.txt";
+		String file1 = "c:\\Random10Number.txt";//宣告輸入檔案路徑及名稱
+		String file2 = "c:\\Random10Number1.txt";//宣告輸出檔案路徑及名稱
 		Method m = new Method();
 		m.copyFile(file1, file2);
 	}

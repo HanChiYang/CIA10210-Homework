@@ -70,7 +70,7 @@ public class Train implements Comparable<Train> {
 
 	public void setDest(String dest) {
 		if (start.equals("")) {
-			System.out.println("請輸入有效起始站");
+			System.out.println("請輸入有效終點站");
 		} else {
 			this.dest = dest;
 		}
@@ -90,10 +90,10 @@ public class Train implements Comparable<Train> {
 		return ("班次" + number + "，車種：" + type + "，出發地：" + start + "，目的地：" + dest + "，票價：" + price);
 	}
 
-	//覆寫hashCode及equals方法，使HashSet能夠找到相同物件，並將其不加入其集合。
+//	//覆寫hashCode及equals方法，使HashSet能夠對應相同物件，以避免加入其集合。
 	@Override
 	public int hashCode() {
-		return Objects.hash(number);
+		return Objects.hash(dest, number, price, start, type);
 	}
 
 	@Override
@@ -105,18 +105,22 @@ public class Train implements Comparable<Train> {
 		if (getClass() != obj.getClass())
 			return false;
 		Train other = (Train) obj;
-		return number == other.number && Objects.equals(number, other.number);
+		return Objects.equals(dest, other.dest) && number == other.number
+				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price)
+				&& Objects.equals(start, other.start) && Objects.equals(type, other.type);
 	}
 
-	//覆寫compareTo方法，使ArrayList及TreeSet能依此方法排序。
+	// 覆寫compareTo方法，使ArrayList及TreeSet能依此方法排序。
 	@Override
 	public int compareTo(Train other) {
 		if (this.number > other.number) {
 			return 1;
-		} else if (this.number < other.number){
+		} else if (this.number < other.number) {
 			return -1;
 		} else {
 			return 0;
 		}
+
 	}
+
 }
