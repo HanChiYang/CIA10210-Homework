@@ -29,7 +29,7 @@ class Method {
 			try {
 				while ((c = in.read()) != -1) {
 					out.write(c);
-					System.out.flush();
+					out.flush();
 				}
 				out.close();
 				in.close();

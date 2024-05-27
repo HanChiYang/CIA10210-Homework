@@ -2,9 +2,6 @@ package HW6;
 
 public class Calculator {
 
-	private int x;
-	private int y;
-
 	//無參數建構子
 	public Calculator() {
 		
